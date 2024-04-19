@@ -27,6 +27,7 @@ const Home = () => {
   const authToken = Cookies.get("authToken");
 
   const getFeaturedPlayListData = async () => {
+    setFeaturedPlayListError(false);
     const configOptions = {
       method: "GET",
       headers: {
@@ -45,11 +46,11 @@ const Home = () => {
       }
     } catch (err) {
       setFeaturedPlayListError(true);
-      console.log(err);
     }
   };
 
   const getCategoriesPlayListData = async () => {
+    setCategoryPlayListError(false);
     const configOptions = {
       method: "GET",
       headers: {
@@ -67,11 +68,11 @@ const Home = () => {
       }
     } catch (err) {
       setCategoryPlayListError(true);
-      console.log(err);
     }
   };
 
   const getNewReleasePlayListData = async () => {
+    setNewReleasesPlayListError(false);
     const configOptions = {
       method: "GET",
       headers: {
@@ -90,7 +91,6 @@ const Home = () => {
       }
     } catch (err) {
       setNewReleasesPlayListError(true);
-      console.log(err);
     }
   };
 
