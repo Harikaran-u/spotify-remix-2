@@ -39,8 +39,8 @@
 
 @media screen and (max-width: 576px) {
   .category-card {
-    width: 82px;
-    height: 82px;
+    width: 80px;
+    height: 80px;
   }
   .category-logo {
     height: 50px;
