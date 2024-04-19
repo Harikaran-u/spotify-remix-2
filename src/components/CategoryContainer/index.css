@@ -1,0 +1,37 @@
+.display-category-list-container {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+}
+
+.category-card {
+  width: 160px;
+  height: 160px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-name {
+  font-family: Assistant;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  text-align: left;
+  color: #f8fafc;
+  padding-left: 10px;
+  text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.category-logo {
+  height: 100px;
+  width: 100px;
+  rotate: 25deg;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 80px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

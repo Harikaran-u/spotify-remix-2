@@ -1,0 +1,33 @@
+.display-playlist-container {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0;
+}
+
+.play-list-banner {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.play-list-logo {
+  width: 160px;
+  height: 160px;
+  border-radius: 8px;
+}
+
+.play-list-name {
+  font-family: Assistant;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+  color: #f8fafc;
+  margin-top: 10px;
+  width: 160px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
