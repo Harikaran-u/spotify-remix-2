@@ -2,6 +2,7 @@
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 20px;
   padding: 0;
 }
@@ -30,4 +31,20 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+@media screen and (max-width: 576px) {
+  .play-list-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+  }
+  .play-list-name {
+    font-family: Assistant;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15px;
+    text-align: center;
+    width: 80px;
+  }
 }
