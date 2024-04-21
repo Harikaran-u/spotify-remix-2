@@ -2,7 +2,7 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 20px;
   list-style: none;
 }
@@ -42,12 +42,12 @@
     gap: 14px;
   }
   .category-card {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
   }
   .category-logo {
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     border-radius: 4px;
     right: 0;
     bottom: 0;

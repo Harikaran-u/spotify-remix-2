@@ -1,14 +1,18 @@
 import { Route, Switch } from "react-router-dom";
-import "./App.css";
+import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./components/Login";
 import Home from "./components/Home";
-import ProtectedRoute from "./components/ProtectedRoute";
+import SinglePlayList from "./components/SinglePlayList";
+import NotFound from "./components/NotFound";
+import "./App.css";
 
 const App = () => (
   <div className="main-app-container">
     <Switch>
       <Route exact path="/login" component={Login} />
       <ProtectedRoute exact path="/" component={Home} />
+      <ProtectedRoute exact path="/playlist/:id" component={SinglePlayList} />
+      <ProtectedRoute exact path="/notfound" component={NotFound} />
     </Switch>
   </div>
 );

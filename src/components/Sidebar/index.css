@@ -1,0 +1,46 @@
+.side-bar {
+  width: 120px;
+  height: 100vh;
+  background-color: #040306;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.app-logo {
+  width: 80px;
+  height: 30px;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #9b9b9b;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+}
+
+.logout-text {
+  font-family: Assistant;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 15.7px;
+  text-align: center;
+}
+
+@media screen and (max-width: 576px) {
+  .side-bar {
+    width: 100%;
+    height: 56px;
+    flex-direction: row;
+    align-items: center;
+  }
+  .logout-text {
+    display: none;
+  }
+}

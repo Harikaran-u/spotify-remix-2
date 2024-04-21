@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
-import { RiLogoutCircleRLine } from "react-icons/ri";
 import Loader from "../Loader";
 import PlayListContainer from "../PlayListContainer";
 import CategoryContainer from "../CategoryContainer";
 import ErrorContainer from "../ErrorContainer";
-
+import Sidebar from "../Sidebar";
 import "./index.css";
 
 const featuredPlaylistsApiUrl =
@@ -14,6 +13,9 @@ const featuredPlaylistsApiUrl =
 const categoriesApiUrl = "https://apis2.ccbp.in/spotify-clone/categories";
 
 const newReleasesApiUrl = "https://apis2.ccbp.in/spotify-clone/new-releases";
+
+const getPlayListUrl =
+  "https://apis2.ccbp.in/spotify-clone/playlists-details/${playlistId}";
 
 const Home = () => {
   const [featuredPlayList, setFeaturedPlayList] = useState(null);
@@ -105,18 +107,7 @@ const Home = () => {
       {isLoading && <Loader />}
       {!isLoading && (
         <>
-          <div className="side-bar">
-            <img
-              src="https://res.cloudinary.com/diuvnny8c/image/upload/v1713338797/music_b5ox5o.png"
-              alt="music-logo"
-              className="app-logo"
-            />
-
-            <button type="button" className="logout-btn">
-              <RiLogoutCircleRLine size="25" />
-              <span className="logout-text">Logout</span>
-            </button>
-          </div>
+          <Sidebar />
           <div className="play-list-data-container">
             {!isFeaturePlayListError ? (
               <div className="editors-pick-container">
