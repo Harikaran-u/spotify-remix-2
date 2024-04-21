@@ -47,6 +47,16 @@ const SinglePlayList = () => {
     return year;
   };
 
+  const getDurationInMinutes = (duration) => {
+    const totalSeconds = Math.floor(duration / 1000);
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    const formattedMinutes = String(minutes).padStart(2, "0");
+    const formattedSeconds = String(seconds).padStart(2, "0");
+    const timeString = `${formattedMinutes}:${formattedSeconds}`;
+    return timeString;
+  };
+
   return (
     <div className="single-playlist-main-container">
       <Sidebar />
@@ -77,7 +87,7 @@ const SinglePlayList = () => {
           <div className="display-songs-container">
             <table className="data-table">
               <thead className="table-head">
-                <tr className="display-titles-container">
+                <tr>
                   {titlesArray.map((title, index) => (
                     <th className="playlist-title" key={index}>
                       {title}
@@ -90,9 +100,11 @@ const SinglePlayList = () => {
                   <tr className="track-row" key={index}>
                     <td className="track-data">{index + 1}</td>
                     <td className="track-data">{eachTrack.track.name}</td>
-                    <td className="track-daat">song</td>
+                    <td className="track-data album-name">
+                      {eachTrack.track.album.name}
+                    </td>
                     <td className="track-data">
-                      {eachTrack.track.duration_ms}
+                      {getDurationInMinutes(eachTrack.track.duration_ms)}
                     </td>
                     <td className="track-data">
                       {eachTrack.track.artists[0].name}
