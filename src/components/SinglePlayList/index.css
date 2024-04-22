@@ -1,4 +1,4 @@
-.single-playlist-main-container {
+.single-playlist-main-container-desktop {
   display: flex;
   height: 100vh;
   background-color: #181818;
@@ -6,7 +6,6 @@
 .single-playlist-data-display-container {
   display: flex;
   flex-direction: column;
-  padding: 20px;
   width: 100%;
 }
 .back-btn {
@@ -28,6 +27,7 @@
 
 .single-playlist-banner {
   display: flex;
+  padding: 20px;
 }
 
 .single-playlist-logo {
@@ -89,6 +89,8 @@
 .display-songs-container {
   height: 400px;
   overflow: auto;
+  padding: 20px;
+  padding-top: 0;
 }
 .data-table {
   width: 100%;
@@ -122,6 +124,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  border-top: 1px solid #9b9b9b;
 }
 
 .album-logo-artist-container {
@@ -177,9 +180,123 @@
   background-color: #ffffff !important;
 }
 
-.rhap_volume-bar {
+.rhap_volume-bar-filled {
   background-color: #1db954 !important;
+}
+.rhap_volume-bar {
+  background-color: #9b9b9b !important;
 }
 .rhap_volume-indicator {
   background-color: #ffffff !important;
+}
+.rhap_time {
+  color: #9b9b9b !important;
+}
+.rhap_volume-button {
+  color: #f8fafc;
+}
+
+.single-playlist-main-container-mobile {
+  display: none;
+}
+
+/*responsive design*/
+@media screen and (max-width: 576px) {
+  .single-playlist-main-container-desktop {
+    display: none;
+  }
+  .single-playlist-main-container-mobile {
+    display: flex;
+    flex-direction: column;
+    background-color: #181818;
+    padding: 10px;
+    height: 100vh;
+  }
+  .single-playlist-banner-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .single-playlist-logo-mobile {
+    width: 150px;
+    height: 150px;
+    border-radius: 4px;
+  }
+  .single-playlist-info-mobile {
+    display: flex;
+    flex-direction: column;
+  }
+  .single-play-list-name {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 0;
+  }
+  .play-list-owner-name {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 0;
+    color: #94a3b8;
+  }
+  .display-tracks-container-mobile {
+    padding: 10px;
+    list-style: none;
+    height: 300px;
+    overflow: auto;
+  }
+  .track-container-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .track-name-mobile {
+    font-family: Assistant;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: left;
+    color: #ffffff;
+    width: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-wrap: nowrap;
+  }
+  .track-artist-mobile {
+    font-family: Assistant;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15.7px;
+    text-align: left;
+    color: #9b9b9b;
+  }
+  .track-duration-mobile {
+    font-family: Assistant;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: left;
+    color: #9b9b9b;
+  }
+  .album-art {
+    height: 50px;
+    width: 50px;
+  }
+  .selected-album-artist-name {
+    width: 100px;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .audio-control-btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 25px;
+  }
+  .custom-audio-player-mobile {
+    display: none;
+  }
 }
