@@ -7,7 +7,6 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
-  gap: 20px;
   width: 100%;
 }
 .back-btn {
@@ -17,13 +16,14 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   color: #f8fafc;
   font-family: Assistant;
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
   width: 80px;
+  margin-bottom: 20px;
 }
 
 .single-playlist-banner {
@@ -91,10 +91,9 @@
   overflow: auto;
 }
 .data-table {
-  /* border-spacing: 8px; */
   width: 100%;
   border-collapse: separate;
-  border-spacing: 24px;
+  border-spacing: 0 16px;
 }
 .table-head {
   position: sticky;
@@ -108,4 +107,79 @@
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 160px;
+}
+.track-row {
+  cursor: pointer;
+}
+.selected-track {
+  background-color: #303030;
+}
+
+/* audio player styles */
+
+.audio-player-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.album-logo-artist-container {
+  display: flex;
+  align-items: center;
+}
+
+.album-art {
+  width: 60x;
+  height: 60px;
+  border-radius: 4px;
+}
+
+.selected-album-name {
+  font-family: Assistant;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: left;
+  color: #ffffff;
+  width: 180px;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.selected-album-artist-name {
+  font-family: Assistant;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 15px;
+  text-align: left;
+  color: #9b9b9b;
+}
+
+.album-artist-info-container {
+  margin-left: 14px;
+}
+
+.audio-player-custom-style {
+  background-color: transparent;
+  color: #9b9b9b;
+}
+
+.rhap_container {
+  background: transparent;
+}
+
+.rhap_progress-filled {
+  background-color: #1db954 !important;
+}
+.rhap_progress-indicator {
+  background-color: #ffffff !important;
+}
+
+.rhap_volume-bar {
+  background-color: #1db954 !important;
+}
+.rhap_volume-indicator {
+  background-color: #ffffff !important;
 }

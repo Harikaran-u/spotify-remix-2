@@ -9,7 +9,7 @@ const PlayListContainer = (props) => {
     <ul className="display-playlist-container">
       {playListData.map((eachPlayList) => (
         <Link
-          to={`playlist/${eachPlayList.id}`}
+          to={`/playlist/${eachPlayList.id}`}
           key={eachPlayList.id}
           className="link-style"
         >

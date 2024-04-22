@@ -3,7 +3,10 @@ import Cookies from "js-cookie";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom/cjs/react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
+import moment from "moment";
 import Sidebar from "../Sidebar";
+import AudioPlayer from "react-h5-audio-player";
+import "react-h5-audio-player/lib/styles.css";
 import "./index.css";
 
 const titlesArray = ["#", "Track", "Album", "Time", "Artist", "Added"];
@@ -11,6 +14,7 @@ const titlesArray = ["#", "Track", "Album", "Time", "Artist", "Added"];
 const SinglePlayList = () => {
   const [singlePlaylistData, setSinglePlaylistData] = useState(null);
   const [tracksArray, setTracksArray] = useState(null);
+  const [selectedTrack, setSelectedTrack] = useState(null);
   const { id } = useParams();
   const authToken = Cookies.get("authToken");
 
@@ -41,10 +45,10 @@ const SinglePlayList = () => {
     }
   };
 
-  const getYear = (date) => {
+  const getDistanceFromNow = (date) => {
     const newDate = new Date(date);
-    const year = newDate.getFullYear();
-    return year;
+    const distanceFromNow = moment(newDate).fromNow();
+    return distanceFromNow;
   };
 
   const getDurationInMinutes = (duration) => {
@@ -55,6 +59,17 @@ const SinglePlayList = () => {
     const formattedSeconds = String(seconds).padStart(2, "0");
     const timeString = `${formattedMinutes}:${formattedSeconds}`;
     return timeString;
+  };
+
+  const handleSelectedTrack = (selectedTrack) => {
+    setSelectedTrack(selectedTrack.track);
+    console.log(selectedTrack.track);
+  };
+
+  const getArtistsName = (artistsArr) => {
+    const artistsNames = artistsArr.map((each) => each.name);
+    const result = artistsNames.join(",");
+    return result;
   };
 
   return (
@@ -97,7 +112,15 @@ const SinglePlayList = () => {
               </thead>
               <tbody>
                 {tracksArray.map((eachTrack, index) => (
-                  <tr className="track-row" key={index}>
+                  <tr
+                    className={`track-row ${
+                      selectedTrack !== null &&
+                      selectedTrack.id === eachTrack.track.id &&
+                      "selected-track"
+                    }`}
+                    key={index}
+                    onClick={() => handleSelectedTrack(eachTrack)}
+                  >
                     <td className="track-data">{index + 1}</td>
                     <td className="track-data">{eachTrack.track.name}</td>
                     <td className="track-data album-name">
@@ -110,12 +133,36 @@ const SinglePlayList = () => {
                       {eachTrack.track.artists[0].name}
                     </td>
                     <td className="track-data">
-                      {getYear(eachTrack.added_at)}
+                      {getDistanceFromNow(eachTrack.added_at)}
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
+          </div>
+        )}
+        {selectedTrack && (
+          <div className="audio-player-container">
+            <div className="album-logo-artist-container">
+              <img
+                src={selectedTrack.album.images[0].url}
+                alt="album-logo"
+                className="album-art"
+              />
+              <div className="album-artist-info-container">
+                <h3 className="selected-album-name">{selectedTrack.name}</h3>
+                <p className="selected-album-artist-name">
+                  {getArtistsName(selectedTrack.artists)}
+                </p>
+              </div>
+            </div>
+
+            <AudioPlayer
+              src={selectedTrack.preview_url}
+              layout="horizontal"
+              showJumpControls={false}
+              customAdditionalControls={[]}
+            />
           </div>
         )}
       </div>
