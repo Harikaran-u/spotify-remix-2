@@ -4,7 +4,6 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const PlayListContainer = (props) => {
   const { playListData, routePath } = props;
-  console.log(routePath);
 
   return (
     <ul className="display-playlist-container">

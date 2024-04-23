@@ -14,9 +14,6 @@ const categoriesApiUrl = "https://apis2.ccbp.in/spotify-clone/categories";
 
 const newReleasesApiUrl = "https://apis2.ccbp.in/spotify-clone/new-releases";
 
-const getPlayListUrl =
-  "https://apis2.ccbp.in/spotify-clone/playlists-details/${playlistId}";
-
 const Home = () => {
   const [featuredPlayList, setFeaturedPlayList] = useState(null);
   const [categoryPlayList, setCategoryPlayList] = useState(null);
@@ -42,7 +39,6 @@ const Home = () => {
       if (response.ok) {
         setFeaturedPlayList(data.playlists.items);
         setIsLoading(false);
-        console.log(data.playlists.items);
       } else {
         setFeaturedPlayListError(true);
       }
@@ -64,7 +60,6 @@ const Home = () => {
       const data = await response.json();
       if (response.ok) {
         setCategoryPlayList(data.categories.items);
-        console.log(data.categories.items);
       } else {
         setCategoryPlayListError(true);
       }
@@ -87,7 +82,6 @@ const Home = () => {
       if (response.ok) {
         setNewReleasesPlayList(data.albums.items);
         setIsLoading(false);
-        console.log(data.albums.items);
       } else {
         setNewReleasesPlayListError(true);
       }

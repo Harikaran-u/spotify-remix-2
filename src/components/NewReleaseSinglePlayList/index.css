@@ -3,6 +3,11 @@
   background-color: #181818;
   display: flex;
 }
+.new-release-main-container {
+  height: 100vh;
+  background-color: #181818;
+  display: flex;
+}
 
 .new-releases-single-playlist-contaier {
   display: flex;
