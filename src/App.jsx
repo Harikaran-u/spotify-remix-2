@@ -7,6 +7,7 @@ import NotFound from "./components/NotFound";
 import NewReleasesSinglePlayList from "./components/NewReleaseSinglePlayList";
 import CategoryPlayList from "./components/CategoryPlayList";
 import "./App.css";
+import { Redirect } from "react-router-dom/cjs/react-router-dom";
 
 const App = () => (
   <div className="main-app-container">
@@ -24,7 +25,8 @@ const App = () => (
         path="/category/playlist/:id"
         component={CategoryPlayList}
       />
-      <ProtectedRoute exact path="/notfound" component={NotFound} />
+      <Route exact path="/notfound" component={NotFound} />
+      <Redirect to="/notfound" />
     </Switch>
   </div>
 );
