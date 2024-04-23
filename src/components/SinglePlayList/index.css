@@ -246,7 +246,7 @@
   .display-tracks-container-mobile {
     padding: 10px;
     list-style: none;
-    height: 300px;
+    height: 600px;
     overflow: auto;
   }
   .track-container-mobile {

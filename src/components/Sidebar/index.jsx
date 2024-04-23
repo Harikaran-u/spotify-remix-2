@@ -11,7 +11,11 @@ const Sidebar = () => {
         className="app-logo"
       />
 
-      <button type="button" className="logout-btn">
+      <button
+        type="button"
+        className="logout-btn"
+        onClick={() => console.log("log-out-clicked")}
+      >
         <RiLogoutCircleRLine size="25" />
         <span className="logout-text">Logout</span>
       </button>
