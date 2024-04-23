@@ -4,6 +4,7 @@ import Login from "./components/Login";
 import Home from "./components/Home";
 import SinglePlayList from "./components/SinglePlayList";
 import NotFound from "./components/NotFound";
+import NewReleasesSinglePlayList from "./components/NewReleaseSinglePlayList";
 import "./App.css";
 
 const App = () => (
@@ -12,6 +13,11 @@ const App = () => (
       <Route exact path="/login" component={Login} />
       <ProtectedRoute exact path="/" component={Home} />
       <ProtectedRoute exact path="/playlist/:id" component={SinglePlayList} />
+      <ProtectedRoute
+        exact
+        path="/playlist/new/:id"
+        component={NewReleasesSinglePlayList}
+      />
       <ProtectedRoute exact path="/notfound" component={NotFound} />
     </Switch>
   </div>

@@ -126,6 +126,9 @@
   width: 100%;
   border-top: 1px solid #9b9b9b;
   padding: 0 14px;
+  position: sticky;
+  bottom: 0;
+  background-color: #181818;
 }
 
 .album-logo-artist-container {
@@ -212,6 +215,7 @@
     background-color: #181818;
     padding: 10px;
     height: 100vh;
+    position: relative;
   }
   .single-playlist-banner-mobile {
     display: flex;
@@ -242,7 +246,7 @@
   .display-tracks-container-mobile {
     padding: 10px;
     list-style: none;
-    /* height: 300px; */
+    height: 300px;
     overflow: auto;
   }
   .track-container-mobile {

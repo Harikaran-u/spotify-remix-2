@@ -3,13 +3,14 @@ import "./index.css";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const PlayListContainer = (props) => {
-  const { playListData } = props;
+  const { playListData, routePath } = props;
+  console.log(routePath);
 
   return (
     <ul className="display-playlist-container">
       {playListData.map((eachPlayList) => (
         <Link
-          to={`/playlist/${eachPlayList.id}`}
+          to={`/playlist${routePath ? routePath : ""}/${eachPlayList.id}`}
           key={eachPlayList.id}
           className="link-style"
         >

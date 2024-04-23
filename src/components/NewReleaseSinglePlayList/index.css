@@ -1,0 +1,17 @@
+.new-releases-single-main-container {
+  height: 100vh;
+  background-color: #181818;
+  display: flex;
+}
+
+.new-releases-single-playlist-contaier {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media screen and (max-width: 576px) {
+  .new-releases-single-main-container {
+    display: none;
+  }
+}

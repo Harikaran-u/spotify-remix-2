@@ -135,7 +135,10 @@ const Home = () => {
               <div className="editors-pick-container">
                 <h2 className="play-list-head">New releases</h2>
                 {newReleasesPlayList && (
-                  <PlayListContainer playListData={newReleasesPlayList} />
+                  <PlayListContainer
+                    playListData={newReleasesPlayList}
+                    routePath="/new"
+                  />
                 )}
               </div>
             ) : (
