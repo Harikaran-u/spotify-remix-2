@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom/cjs/react-router-dom";
 import "./index.css";
 
 const CategoryContainer = (props) => {
@@ -12,22 +13,27 @@ const CategoryContainer = (props) => {
   };
 
   return (
-    <div className="display-category-list-container">
+    <ul className="display-category-list-container">
       {categoryData.map((eachData) => (
-        <li
-          className="category-card"
+        <Link
+          to={`/category/playlist/${eachData.id}?name=${eachData.name}`}
           key={eachData.id}
-          style={{ backgroundColor: `${getRandomColor()}` }}
+          className="link-style"
         >
-          <h2 className="category-name">{eachData.name}</h2>
-          <img
-            src={eachData.icons[0].url}
-            className="category-logo"
-            alt="category-logo"
-          />
-        </li>
+          <li
+            className="category-card"
+            style={{ backgroundColor: `${getRandomColor()}` }}
+          >
+            <h2 className="category-name">{eachData.name}</h2>
+            <img
+              src={eachData.icons[0].url}
+              className="category-logo"
+              alt="category-logo"
+            />
+          </li>
+        </Link>
       ))}
-    </div>
+    </ul>
   );
 };
 

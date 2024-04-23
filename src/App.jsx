@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import SinglePlayList from "./components/SinglePlayList";
 import NotFound from "./components/NotFound";
 import NewReleasesSinglePlayList from "./components/NewReleaseSinglePlayList";
+import CategoryPlayList from "./components/CategoryPlayList";
 import "./App.css";
 
 const App = () => (
@@ -17,6 +18,11 @@ const App = () => (
         exact
         path="/playlist/new/:id"
         component={NewReleasesSinglePlayList}
+      />
+      <ProtectedRoute
+        exact
+        path="/category/playlist/:id"
+        component={CategoryPlayList}
       />
       <ProtectedRoute exact path="/notfound" component={NotFound} />
     </Switch>

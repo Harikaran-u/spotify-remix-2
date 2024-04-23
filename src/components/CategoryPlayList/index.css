@@ -1,0 +1,61 @@
+.category-playlist-main-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #181818;
+}
+.display-category-playlist-container {
+  padding: 20px 10px;
+}
+.category-playlist-data-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+.category-playlist-title-name {
+  font-family: Assistant;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.category-playlist-data-list-container {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+}
+
+.category-playlist-info-container {
+  padding: 6px;
+}
+
+.category-playlist-logo {
+  height: 160px;
+  width: 160px;
+  border-radius: 4px;
+}
+
+.category-playlist-name {
+  font-family: Assistant;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  width: 160px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-wrap: nowrap;
+}
+
+.category-playlist-count {
+  font-family: Assistant;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  color: #64748b;
+}
