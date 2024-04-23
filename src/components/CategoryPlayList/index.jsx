@@ -14,6 +14,7 @@ const CategoryPlayList = () => {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const categoryName = params.get("name");
+
   useEffect(() => {
     getCategoryList();
   }, []);
@@ -56,26 +57,30 @@ const CategoryPlayList = () => {
             <h2 className="category-playlist-title-name">{categoryName}</h2>
             {playListTracks && (
               <ul className="category-playlist-data-list-container">
-                {playListTracks.map((eachPlaylist) => (
-                  <li
-                    className="category-playlist-info-container"
-                    key={eachPlaylist.id}
-                  >
-                    <img
-                      src={eachPlaylist.images[0].url}
-                      alt="playlist-logo"
-                      className="category-playlist-logo"
-                    />
-                    <div className="category-details-container">
-                      <h2 className="category-playlist-name">
-                        {eachPlaylist.name}
-                      </h2>
-                      <p className="category-playlist-count">
-                        {`${eachPlaylist.tracks.total} Tracks`}
-                      </p>
-                    </div>
-                  </li>
-                ))}
+                {playListTracks.map((eachPlaylist) => {
+                  if (eachPlaylist) {
+                    return (
+                      <li
+                        className="category-playlist-info-container"
+                        key={eachPlaylist.id}
+                      >
+                        <img
+                          src={eachPlaylist.images[0].url}
+                          alt="playlist-logo"
+                          className="category-playlist-logo"
+                        />
+                        <div className="category-details-container">
+                          <h2 className="category-playlist-name">
+                            {eachPlaylist.name}
+                          </h2>
+                          <p className="category-playlist-count">
+                            {`${eachPlaylist.tracks.total} Tracks`}
+                          </p>
+                        </div>
+                      </li>
+                    );
+                  }
+                })}
               </ul>
             )}
           </div>
