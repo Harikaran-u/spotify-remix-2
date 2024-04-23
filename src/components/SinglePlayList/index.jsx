@@ -24,6 +24,13 @@ const SinglePlayList = () => {
     getPlayList();
   }, []);
 
+  useEffect(() => {
+    audioRef.current.addEventListener("ended", handleAudioEnded);
+    return () => {
+      audioRef.current.removeEventListener("ended", handleAudioEnded);
+    };
+  }, []);
+
   const getPlayList = async () => {
     const playListUrl = `https://apis2.ccbp.in/spotify-clone/playlists-details/${id}`;
     const configOptions = {
@@ -38,7 +45,7 @@ const SinglePlayList = () => {
       if (response.ok) {
         setSinglePlaylistData(data);
         setTracksArray(data.tracks.items);
-        console.log(data.tracks.items);
+        console.log(data.tracks.items.length);
       } else {
         console.log("error", data);
       }
@@ -66,10 +73,17 @@ const SinglePlayList = () => {
   const handleSelectedTrack = (newTrack) => {
     setSelectedTrack(newTrack.track);
     setIsPlaying(true);
-    if (newTrack) {
+    if (isMobile() && newTrack) {
       audioRef.current.src = newTrack.track.preview_url;
       audioRef.current.play();
     }
+  };
+
+  const isMobile = () => {
+    const userAgent = navigator.userAgent;
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      userAgent
+    );
   };
 
   const getArtistsName = (artistsArr) => {
@@ -88,12 +102,9 @@ const SinglePlayList = () => {
     }
   };
 
-  // useEffect(() => {
-  //   setIsPlaying(true);
-  //   if (audioRef.current) {
-  //     audioRef.current.pause();
-  //   }
-  // }, [selectedTrack]);
+  const handleAudioEnded = () => {
+    setIsPlaying(false);
+  };
 
   return (
     <>
@@ -180,13 +191,15 @@ const SinglePlayList = () => {
                   </p>
                 </div>
               </div>
-
-              <AudioPlayer
-                src={selectedTrack.preview_url}
-                layout="horizontal"
-                showJumpControls={false}
-                customAdditionalControls={[]}
-              />
+              {!isMobile() && (
+                <AudioPlayer
+                  src={selectedTrack.preview_url}
+                  layout="horizontal"
+                  showJumpControls={false}
+                  customAdditionalControls={[]}
+                  className="custom-audio-player-desktop"
+                />
+              )}
             </div>
           )}
         </div>

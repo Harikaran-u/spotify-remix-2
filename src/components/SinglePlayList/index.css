@@ -125,6 +125,7 @@
   justify-content: space-between;
   width: 100%;
   border-top: 1px solid #9b9b9b;
+  padding: 0 14px;
 }
 
 .album-logo-artist-container {
@@ -241,7 +242,7 @@
   .display-tracks-container-mobile {
     padding: 10px;
     list-style: none;
-    height: 300px;
+    /* height: 300px; */
     overflow: auto;
   }
   .track-container-mobile {
@@ -297,6 +298,9 @@
     font-size: 25px;
   }
   .custom-audio-player-mobile {
+    display: none;
+  }
+  .custom-audio-player-desktop {
     display: none;
   }
 }
