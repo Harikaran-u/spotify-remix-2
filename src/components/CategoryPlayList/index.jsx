@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Cookies from "js-cookie";
 import Sidebar from "../Sidebar";
 import ErrorContainer from "../ErrorContainer";
@@ -10,6 +10,7 @@ const CategoryPlayList = () => {
   const [playListTracks, setPlayListTracks] = useState(null);
   const [isError, setIsError] = useState(false);
   const authToken = Cookies.get("authToken");
+  const navigate = useNavigate();
   const { id } = useParams();
   const location = useLocation();
   const params = new URLSearchParams(location.search);
@@ -44,11 +45,15 @@ const CategoryPlayList = () => {
     getCategoryList();
   };
 
+  const handleHistoryBack = () => {
+    navigate(-1);
+  };
+
   return (
     <div className="category-playlist-main-container">
       <Sidebar />
       <div className="display-category-playlist-container">
-        <button className="back-btn">
+        <button className="back-btn" onClick={handleHistoryBack}>
           <FaArrowLeft />
           <span>Back</span>
         </button>

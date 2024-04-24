@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Cookies from "js-cookie";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import moment from "moment";
 import Sidebar from "../Sidebar";
@@ -19,6 +19,7 @@ const SinglePlayList = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isError, setIsError] = useState(false);
   const audioRef = useRef(new Audio());
+  const navigate = useNavigate();
   const { id } = useParams();
   const authToken = Cookies.get("authToken");
 
@@ -111,13 +112,17 @@ const SinglePlayList = () => {
     getPlayList();
   };
 
+  const handleBackHistory = () => {
+    navigate(-1);
+  };
+
   return (
     <>
       <div className="single-playlist-main-container-desktop">
         <Sidebar />
         {!isError && (
           <div className="single-playlist-data-display-container">
-            <button className="back-btn">
+            <button className="back-btn" onClick={handleBackHistory}>
               <FaArrowLeft />
               <span>Back</span>
             </button>
@@ -216,7 +221,7 @@ const SinglePlayList = () => {
       </div>
       {!isError && (
         <div className="single-playlist-main-container-mobile">
-          <button className="back-btn">
+          <button className="back-btn" onClick={handleBackHistory}>
             <FaArrowLeft />
             <span>Back</span>
           </button>
