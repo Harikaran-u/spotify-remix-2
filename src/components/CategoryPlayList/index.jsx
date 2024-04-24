@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import Cookies from "js-cookie";
 import Sidebar from "../Sidebar";
 import ErrorContainer from "../ErrorContainer";
@@ -65,24 +65,27 @@ const CategoryPlayList = () => {
                 {playListTracks.map((eachPlaylist) => {
                   if (eachPlaylist) {
                     return (
-                      <li
-                        className="category-playlist-info-container"
+                      <Link
+                        to={`/playlist/${eachPlaylist.id}`}
                         key={eachPlaylist.id}
+                        className="link-style"
                       >
-                        <img
-                          src={eachPlaylist.images[0].url}
-                          alt="playlist-logo"
-                          className="category-playlist-logo"
-                        />
-                        <div className="category-details-container">
-                          <h2 className="category-playlist-name">
-                            {eachPlaylist.name}
-                          </h2>
-                          <p className="category-playlist-count">
-                            {`${eachPlaylist.tracks.total} Tracks`}
-                          </p>
-                        </div>
-                      </li>
+                        <li className="category-playlist-info-container">
+                          <img
+                            src={eachPlaylist.images[0].url}
+                            alt="playlist-logo"
+                            className="category-playlist-logo"
+                          />
+                          <div className="category-details-container">
+                            <h2 className="category-playlist-name">
+                              {eachPlaylist.name}
+                            </h2>
+                            <p className="category-playlist-count">
+                              {`${eachPlaylist.tracks.total} Tracks`}
+                            </p>
+                          </div>
+                        </li>
+                      </Link>
                     );
                   }
                 })}
