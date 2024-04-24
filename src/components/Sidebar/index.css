@@ -48,6 +48,8 @@
 .popup-content {
   padding: 0;
   border: none;
+  width: 260px;
+  border-radius: 10px;
 }
 .yes-btn {
   margin-right: 10px;
@@ -61,13 +63,14 @@
   border: none;
   outline: none;
   border-radius: 4px;
-  color: #181818;
+  color: #000000;
   background-color: #ffffff;
   cursor: pointer;
 }
 .modal {
   font-size: 12px;
-  background-color: rgb(44, 187, 44);
+  background-color: rgb(44, 203, 0);
+  border-radius: 10px;
 }
 .modal > .header {
   width: 100%;
