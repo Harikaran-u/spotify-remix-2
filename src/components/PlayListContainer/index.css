@@ -39,10 +39,11 @@
 @media screen and (max-width: 576px) {
   .display-playlist-container {
     gap: 14px;
+    justify-content: center;
   }
   .play-list-logo {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     border-radius: 8px;
   }
   .play-list-name {

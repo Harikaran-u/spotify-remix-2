@@ -34,4 +34,7 @@
   .main-home-container {
     flex-direction: column;
   }
+  .play-list-head {
+    text-align: center;
+  }
 }

@@ -44,10 +44,11 @@
 @media screen and (max-width: 576px) {
   .display-category-list-container {
     gap: 14px;
+    justify-content: center;
   }
   .category-card {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
   }
   .category-logo {
     height: 60px;
