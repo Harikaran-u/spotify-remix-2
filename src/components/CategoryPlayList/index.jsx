@@ -47,6 +47,10 @@ const CategoryPlayList = () => {
 
   const handleHistoryBack = () => {
     navigate(-1);
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.src = "";
+    }
   };
 
   return (

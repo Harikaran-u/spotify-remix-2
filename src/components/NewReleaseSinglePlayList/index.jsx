@@ -106,6 +106,10 @@ const NewReleasesSinglePlayList = () => {
 
   const handleHistroyBack = () => {
     navigate(-1);
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.src = "";
+    }
   };
 
   return (
