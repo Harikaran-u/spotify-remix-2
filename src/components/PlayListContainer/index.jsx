@@ -1,6 +1,5 @@
-import Cookies from "js-cookie";
+import { Link } from "react-router-dom";
 import "./index.css";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const PlayListContainer = (props) => {
   const { playListData, routePath } = props;

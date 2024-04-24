@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom/cjs/react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import Cookies from "js-cookie";
-import "./index.css";
 import Sidebar from "../Sidebar";
 import ErrorContainer from "../ErrorContainer";
 import { FaArrowLeft } from "react-icons/fa";
+import "./index.css";
 
 const CategoryPlayList = () => {
   const [playListTracks, setPlayListTracks] = useState(null);

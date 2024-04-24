@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Cookies from "js-cookie";
-import { useParams } from "react-router-dom/cjs/react-router-dom";
+import { useParams } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import moment from "moment";
 import Sidebar from "../Sidebar";

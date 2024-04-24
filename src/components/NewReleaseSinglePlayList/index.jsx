@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import Cookies from "js-cookie";
-import "./index.css";
-import { useParams } from "react-router-dom/cjs/react-router-dom";
+import { useParams } from "react-router-dom";
 import Sidebar from "../Sidebar";
 import { FaArrowLeft } from "react-icons/fa";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import { IoMdPause, IoMdPlay } from "react-icons/io";
 import ErrorContainer from "../ErrorContainer";
+import "./index.css";
 
 const titlesArray = ["#", "Track", "Time", "Artist"];
 
