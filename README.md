@@ -72,6 +72,7 @@ use the app by giving this sample login credentials
 3. CSS
 4. React Router Dom
 5. H5 Audio Player
+6. Js Cookies
 
 **Note - This project built using React Vite**
 
