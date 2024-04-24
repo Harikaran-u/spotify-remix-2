@@ -1,10 +1,12 @@
 .new-releases-single-main-container {
   height: 100vh;
+  width: 100%;
   background-color: #181818;
   display: flex;
 }
 .new-release-main-container {
   height: 100vh;
+  width: 100%;
   background-color: #181818;
   display: flex;
 }
