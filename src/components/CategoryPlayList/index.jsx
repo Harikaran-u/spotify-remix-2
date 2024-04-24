@@ -18,6 +18,12 @@ const CategoryPlayList = () => {
 
   useEffect(() => {
     getCategoryList();
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.src = "";
+      }
+    };
   }, []);
 
   const getCategoryList = async () => {

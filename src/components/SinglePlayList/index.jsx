@@ -25,6 +25,12 @@ const SinglePlayList = () => {
 
   useEffect(() => {
     getPlayList();
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.src = "";
+      }
+    };
   }, []);
 
   useEffect(() => {
