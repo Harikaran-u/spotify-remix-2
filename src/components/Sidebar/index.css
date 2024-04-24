@@ -69,7 +69,7 @@
 }
 .modal {
   font-size: 12px;
-  background-color: rgb(44, 203, 0);
+  background-color: #1db954;
   border-radius: 10px;
 }
 .modal > .header {
