@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
-import "./index.css";
 import ErrorContainer from "../ErrorContainer";
+import "./index.css";
 
 const loginReqUrl = "https://apis.ccbp.in/login";
 
