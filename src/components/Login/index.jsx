@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import ErrorContainer from "../ErrorContainer";
 import "./index.css";
@@ -11,11 +11,11 @@ const Login = () => {
   const [password, setUserPassword] = useState("");
   const [loginErrorMsg, setLoginErrorMsg] = useState("");
   const [isError, setIsError] = useState(false);
-
+  const navigate = useNavigate();
   const authToken = Cookies.get("authToken");
 
   if (authToken !== undefined) {
-    return <Navigate to="/" replace={true} />;
+    navigate("/", { replace: true });
   }
 
   const submitUserDetails = async () => {
@@ -32,7 +32,7 @@ const Login = () => {
       if (response.ok) {
         const token = data.jwt_token;
         Cookies.set("authToken", token, { expires: 30, path: "/" });
-        return <Navigate to="/" replace={true} />;
+        navigate("/", { replace: true });
       } else {
         setLoginErrorMsg(data.error_msg);
       }
