@@ -89,7 +89,7 @@
 }
 
 .display-songs-container {
-  height: 400px;
+  height: 800px;
   overflow: auto;
   padding: 20px;
   padding-top: 0;
@@ -117,6 +117,12 @@
 }
 .selected-track {
   background-color: #303030;
+}
+.added-at {
+  width: 120px;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  overflow: hidden;
 }
 
 /* audio player styles */
@@ -207,7 +213,7 @@
 }
 
 /*responsive design*/
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 766px) {
   .single-playlist-main-container-desktop {
     display: none;
   }
@@ -215,7 +221,7 @@
     display: flex;
     flex-direction: column;
     background-color: #181818;
-    padding: 10px;
+    padding: 10px 4px;
     height: 100vh;
     position: relative;
     width: 100%;
@@ -257,6 +263,7 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    cursor: pointer;
   }
   .track-name-mobile {
     font-family: Assistant;
@@ -309,5 +316,48 @@
   }
   .custom-audio-player-desktop {
     display: none;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+  .data-table {
+    padding: 20px;
+  }
+  .selected-album-name {
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .selected-album-artist-name {
+    width: 120px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-wrap: nowrap;
+  }
+  .track-data {
+    font-size: 12px;
+  }
+  .single-play-list-name {
+    font-size: 32px;
+    line-height: 30px;
+  }
+  .album-name {
+    width: 120px;
+  }
+  .display-songs-container {
+    padding: 0;
+    height: 100%;
+  }
+  .artist {
+    width: 80px;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    overflow: hidden;
+  }
+  .single-playlist-logo {
+    height: 180px;
+    width: 180px;
+  }
+  .single-playlist-data-display-container {
+    padding: 20px 2px;
   }
 }

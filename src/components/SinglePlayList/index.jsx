@@ -89,7 +89,7 @@ const SinglePlayList = () => {
 
   const isMobile = () => {
     const userAgent = navigator.userAgent;
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    return /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       userAgent
     );
   };
@@ -178,7 +178,9 @@ const SinglePlayList = () => {
                         onClick={() => handleSelectedTrack(eachTrack)}
                       >
                         <td className="track-data">{index + 1}</td>
-                        <td className="track-data">{eachTrack.track.name}</td>
+                        <td className="track-data album-name">
+                          {eachTrack.track.name}
+                        </td>
                         <td className="track-data album-name">
                           {eachTrack.track.album.name}
                         </td>
@@ -188,7 +190,7 @@ const SinglePlayList = () => {
                         <td className="track-data">
                           {eachTrack.track.artists[0].name}
                         </td>
-                        <td className="track-data">
+                        <td className="track-data added-at">
                           {getDistanceFromNow(eachTrack.added_at)}
                         </td>
                       </tr>
@@ -221,6 +223,7 @@ const SinglePlayList = () => {
                     showJumpControls={false}
                     customAdditionalControls={[]}
                     className="custom-audio-player-desktop"
+                    autoPlay
                   />
                 )}
               </div>
